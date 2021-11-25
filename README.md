@@ -33,11 +33,17 @@ wget https://ttic.uchicago.edu/~lifu/ENGINE_WMT16ROEN.zip
 1. IWSLT'14 German to English (DE-EN) can be obtained with scripts provided in [fairseq](https://github.com/pytorch/fairseq/blob/master/examples/translation/prepare-iwslt14.sh).
 2. WMT'16 Romania to English (RO-EN) can be obtained from [here](https://github.com/nyu-dl/dl4mt-nonauto#downloading-datasets--pre-trained-models).
 
+Run
+```
+bash prepare-iwslt14.sh
+```
+
 
 ## Preprocess
 Here are two examples how to preprocess the datasets. Please check the scripts in detail. Note that, in our project, we also preprocess the pseudocorpus. The beam search outputs from the pretrained autoregressive models are used in this project.  
 
 * **IWSLT14 German-English**
+Run
 ```
 sh preprocess_iwslt14.sh
 ```
@@ -64,11 +70,21 @@ python train_inf.py   \
     --save-dir  $output_dir
 ```
 
+Use:
+```
+bash train_ENGINE_iwslt.sh
+```
+
 
 ## Evaluation
 one decoding iteration is used ( meaning the methods are purely non-autoregressive )
 ```
 python generate_cmlm.py ${output_dir}/data-bin  --path ${model_dir}/checkpoint_best.pt  --task translation_self --remove-bpe --max-sentences 20 --decoding-iterations 1  --decoding-strategy mask_predict
+```
+
+Use the following command instead:
+```
+bash evaluate_ENGINE_iwslt.sh
 ```
 
 
