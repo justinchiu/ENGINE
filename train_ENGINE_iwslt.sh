@@ -29,4 +29,5 @@ CUDA_VISIBLE_DEVICES=0 python train_inf.py \
     --decoder-layers 6 --decoder-embed-dim 512 \
     --max-source-positions 10000 --max-target-positions 10000 --max-update 300000 \
     --seed 0 --save-dir $output_dir \
-    -s de -t en
+    -s de -t en \
+    > LOGS/iwslt-de2en-engine-train.log
