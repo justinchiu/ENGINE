@@ -9,7 +9,7 @@ ENGINE_IWSLT14DEEN
 # data processing and model output
 PATH_YOUR_OUTPUT
 iwslt14.tokenized.de-en
-LOGS
+#LOGS
 
 # original data
 orig

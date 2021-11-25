@@ -39,7 +39,7 @@ def main(args):
     print('| {} {} {} examples'.format(args.data, args.gen_subset, len(task.dataset(args.gen_subset))))
 
     # Set dictionaries
-    #src_dict = task.source_dictionary
+    src_dict = task.source_dictionary
     tgt_dict = task.target_dictionary
     dict = tgt_dict
     
@@ -97,7 +97,7 @@ def main(args):
                 src_str = task.dataset(args.gen_subset).src.get_original_text(sample_id)
                 target_str = task.dataset(args.gen_subset).tgt.get_original_text(sample_id)
             else:
-                src_str = dict.string(src_tokens, args.remove_bpe)
+                src_str = src_dict.string(src_tokens, args.remove_bpe)
                 if args.dehyphenate:
                     src_str = dehyphenate(src_str)
                 if has_target:
