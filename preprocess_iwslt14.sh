@@ -1,10 +1,12 @@
 ## the raw text folder
-text=data/iwslt14deenfair
+#text=data/iwslt14deenfair
+text=iwslt14.tokenized.de-en
 
 ## the beam search outputs(pseudocorpus)
 #text=data/iwslt14deen_beam5fair
 
 output_dir=PATH_YOUR_OUTPUT
+#output_dir=preprocessed_iwslt14
 
 src=de
 

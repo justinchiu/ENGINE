@@ -1,0 +1,17 @@
+__pycache__
+*.pyc
+
+# models
+DE2EN
+ENGINE_IWSLT14DEEN.zip
+ENGINE_IWSLT14DEEN
+
+# data processing and model output
+PATH_YOUR_OUTPUT
+iwslt14.tokenized.de-en
+
+# original data
+orig
+
+mosesdecoder
+subword-nmt
